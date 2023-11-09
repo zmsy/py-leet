@@ -1,0 +1,13 @@
+[tool.poetry]
+name = "py_leet"
+version = "0.1.0"
+description = "Python answers to leetcode questions"
+authors = ["Zach Morrissey <zachmor05@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.3"
+black = "^23.11.0"
