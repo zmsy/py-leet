@@ -7,9 +7,9 @@ class Solution:
         for i in range(len(s)):
             count += self._substringAt(s, i, i)
             count += self._substringAt(s, i, i + 1)
-        
+
         return count
-       
+
     def _substringAt(self, s: str, l: int, r: int) -> None:
         count = 0
         while l >= 0 and r < len(s):
@@ -19,5 +19,5 @@ class Solution:
                 r += 1
             else:
                 break
-        
+
         return count

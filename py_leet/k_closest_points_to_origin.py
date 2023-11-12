@@ -2,6 +2,7 @@ import heapq
 from math import sqrt
 from typing import List, Tuple
 
+
 class Solution:
     heap: List[Tuple[float, int]]
 
@@ -14,8 +15,8 @@ class Solution:
                 heapq.heappush(self.heap, (distance, point))
             else:
                 heapq.heappushpop(self.heap, (distance, point))
-        
+
         return [x[1] for x in self.heap]
-       
+
     def _distance(self, a: List[int], b: List[int]) -> float:
         return abs(sqrt((b[0] - a[0]) ** 2 + (b[1] - a[1]) ** 2))

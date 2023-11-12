@@ -1,6 +1,7 @@
 from collections import defaultdict
 from typing import List, Tuple, DefaultDict
 
+
 class TimeMap:
     cache: DefaultDict[str, List[Tuple[int, str]]]
 
@@ -12,8 +13,8 @@ class TimeMap:
 
     def get(self, key: str, timestamp: int) -> str:
         if not key in self.cache:
-            return ""      
-        
+            return ""
+
         values = self.cache.get(key, [])
         l = 0
         r = len(values) - 1
@@ -26,5 +27,5 @@ class TimeMap:
             else:
                 # don't assign result, because this isn't valid
                 r = mid - 1
-        
+
         return res

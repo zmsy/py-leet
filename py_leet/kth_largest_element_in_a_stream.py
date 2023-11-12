@@ -1,6 +1,7 @@
 import heapq
 from typing import List
 
+
 class KthLargest:
     k: int
     heap: List[int]
