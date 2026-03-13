@@ -2,7 +2,7 @@ import unittest
 from py_leet.longest_substring_without_repeating_characters import Solution
 
 
-class TestLastStoneWeight(unittest.TestCase):
+class TestLongestSubstringWithoutRepeatingCharacters(unittest.TestCase):
     def test1(self):
         sol = Solution()
         self.assertEqual(sol.lengthOfLongestSubstring("abcabcbb"), 3)
