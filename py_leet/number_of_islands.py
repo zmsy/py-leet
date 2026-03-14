@@ -17,24 +17,26 @@ class Solution:
 
         def bfs(i: int, j: int) -> None:
             queue: List[Tuple[int, int]] = [(i, j)]
+            seen.add((i, j))
             while queue:
                 node = queue.pop(0)
-                seen.add(node)
                 neighbs = neighbors(*node)
                 for neighb in neighbs:
-                    queue.append(neighb)
+                    seen.add(neighb)
+                    i, j = neighb
+                    if grid[i][j] == "1":
+                        queue.append(neighb)
 
         def neighbors(i: int, j: int) -> List[Tuple[int, int]]:
             neighbs = [(i - 1, j), (i + 1, j), (i, j - 1), (i, j + 1)]
             return [
                 x
                 for x in neighbs
-                if i >= 0
-                and j >= 0
-                and i < rows
-                and j < cols
+                if x[0] >= 0
+                and x[1] >= 0
+                and x[0] < rows
+                and x[1] < cols
                 and x not in seen
-                and grid[i][j] == "1"
             ]
 
         # traverse through rows
